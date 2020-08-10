@@ -1,6 +1,6 @@
 # LeetCode
 ~~~markdown
-该文件夹用于记录自己的leetcode刷题过程
+1. 算法(第4版)课后习题实现
+2. leetcode刷题
 ~~~
-## 每日一题
 
