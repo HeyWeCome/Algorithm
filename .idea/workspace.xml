@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39730b78-c504-49ef-921c-501433c627d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/linkedList/ConvertBinaryNumberInLinkedListToInteger.java" afterDir="false" />
+    <list default="true" id="39730b78-c504-49ef-921c-501433c627d7" name="Default Changelist" comment="leetcode27题：removeElement完成">
+      <change afterPath="$PROJECT_DIR$/.gitgnore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/META-INF/LeetCode.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/daily/Add_Strings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/daily/Magic_Index_LCCI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/linkedList/Remove_Nth_Node_From_End_of_List$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/linkedList/Remove_Nth_Node_From_End_of_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/linkedList/SumOfTwoNum$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/linkedList/SumOfTwoNum.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +31,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="E:\Workspace\MavenRepository" />
-        <option name="mavenHome" value="E:/Software/Maven/apache-maven-3.6.1" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../Software/Maven/apache-maven-3.6.1" />
         <option name="userSettingsFile" value="E:\Software\Maven\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -43,22 +50,23 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javaTest" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -68,14 +76,17 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Workspace\IDEAWorkspace\Algorithm\src" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="array" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Remove_Nth_Node_From_End_of_List">
-    <configuration name="Magic_Index_LCCI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="daily.Magic_Index_LCCI" />
+  <component name="RunManager" selected="Application.RemoveElement">
+    <configuration name="RemoveElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.RemoveElement" />
       <module name="LeetCode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="daily.*" />
+          <option name="PATTERN" value="array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,16 +140,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RemoveElement" />
         <item itemvalue="Application.Remove_Nth_Node_From_End_of_List" />
         <item itemvalue="Application.SumOfTwoNum" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.test" />
-        <item itemvalue="Application.Magic_Index_LCCI" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -168,77 +191,35 @@
       <workItem from="1601357945061" duration="779000" />
       <workItem from="1604221303504" duration="344000" />
       <workItem from="1605187691135" duration="844000" />
+      <workItem from="1634630106681" duration="1098000" />
     </task>
+    <task id="LOCAL-00001" summary="leetcode27题：removeElement完成">
+      <created>1634631095748</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634631095748</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="921" y="173" width="488" height="558" key="#xdebugger.evaluate" timestamp="1600257196027">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="921" y="173" width="488" height="558" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1600257196027" />
-    <state x="549" y="156" key="FileChooserDialogImpl" timestamp="1604221457417">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="156" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604221457417" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1600340604492">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1397" height="353" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1597801219566" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600340604492" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1600340604491">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1397" height="353" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1597801219566" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600340604491" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1600340604491">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1397" height="353" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1597801219566" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600340604491" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1600340604491">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1397" height="353" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1597801219566" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600340604491" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1600340604492">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600340604492" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1600340604492">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1600340604492" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1600340604492">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1600340604492" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1600340604492">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1600340604492" />
-    <state x="498" y="0" key="SettingsEditor" timestamp="1601253427788">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="498" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601253427788" />
-    <state x="323" y="249" key="com.intellij.ide.util.TipDialog" timestamp="1601357947484">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="323" y="249" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1597715870149" />
-    <state x="2223" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1597800930893" />
-    <state x="323" y="249" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1601357947484" />
-    <state x="178" y="28" key="new project wizard" timestamp="1604221466392">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="178" y="28" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1604221466392" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600430245332">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600430245332" />
+    <MESSAGE value="leetcode27题：removeElement完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetcode27题：removeElement完成" />
   </component>
 </project>
