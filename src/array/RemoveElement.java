@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Arrays;
+
 /**
  * @description: 移除元素
  * @author: heywecome
@@ -31,12 +33,47 @@ public class RemoveElement {
         return slowPoint;
     }
 
+    /**
+     * @Author heywecome
+     * @Description leetcode26题，删除有序数组中的重复项
+     * 给你一个有序数组 nums ，请你原地 删除重复出现的元素，使每个元素只出现一次 ，返回删除后数组的新长度。
+     * 不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。
+     *
+     * @Date 16:47 2021/10/19
+     * @Param [nums]
+     * @return int
+     *
+     * 输入：nums = [1,1,2]
+     * 输出：2, nums = [1,2]
+     * 解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
+     *
+     * 输入：nums = [0,0,1,1,1,2,2,3,3,4]
+     * 输出：5, nums = [0,1,2,3,4]
+     * 解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。
+     *
+     **/
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0 || nums.length == 1) {
+            return nums.length;
+        }
+
+        int slowPoint = 0;
+        for (int fastPoint = 1; fastPoint < nums.length; fastPoint++) {
+            if (nums[fastPoint] != nums[slowPoint]) {
+                nums[slowPoint++] = nums[fastPoint];
+            }
+        }
+
+        return slowPoint;
+    }
+
     public static void main(String[] args) {
-        int[] nums = new int[]{0,1,2,2,3,0,4,2};
-        int val = 2;
+        int[] nums = new int[]{0,0,1,1,1,2,2,3,3,4};
+        int val = 5;
 
         RemoveElement removeElement = new RemoveElement();
-        int i = removeElement.removeElement(nums, val);
+        int i = removeElement.removeDuplicates(nums);
         System.out.println(i);
+        System.out.println(Arrays.toString(nums));
     }
 }
