@@ -92,12 +92,47 @@ public class RemoveElement {
 
     }
 
-    public static void main(String[] args) {
-        int[] nums = new int[]{4,2,4,0,0,3,0,5,1,0};
-        int val = 5;
+    /**
+     * @Author heywecome
+     * @Description leetcode:844题
+     * 给定 s 和 t 两个字符串，当它们分别被输入到空白的文本编辑器后，请你判断二者是否相等。# 代表退格字符。
+     * 如果相等，返回 true ；否则，返回 false 。
+     * 注意：如果对空文本输入退格字符，文本继续为空。
+     *
+     * @Date 10:50 2021/10/20
+     * @Param [s, t]
+     * @return boolean
+     **/
+    public boolean backspaceCompare(String s, String t) {
+        return handleStringToRemoveBackspace(s).equals(handleStringToRemoveBackspace(t));
+    }
 
+    public String handleStringToRemoveBackspace(String s) {
+        StringBuilder strBuilder = new StringBuilder(s);
+
+        int slowPoint = 0;
+        for (int fastPoint = 0; fastPoint < strBuilder.length(); fastPoint++) {
+            if (strBuilder.charAt(fastPoint) != '#') {
+                char temp = strBuilder.charAt(slowPoint);
+                strBuilder.setCharAt(slowPoint++, strBuilder.charAt(fastPoint));
+                strBuilder.setCharAt(fastPoint, temp);
+            } else {
+                if (slowPoint != 0)
+                    slowPoint--;
+            }
+        }
+
+        return strBuilder.substring(0, slowPoint);
+    }
+
+    public static void main(String[] args) {
+//        int[] nums = new int[]{4,2,4,0,0,3,0,5,1,0};
+//        int val = 5;
+
+        String s = "a##c";
+        String t = "#a#c";
         RemoveElement removeElement = new RemoveElement();
-        removeElement.moveZeroes(nums);
-        System.out.println(Arrays.toString(nums));
+        System.out.println(removeElement.backspaceCompare(s, t));
+        System.out.println(removeElement.handleStringToRemoveBackspace(t).toString());
     }
 }
