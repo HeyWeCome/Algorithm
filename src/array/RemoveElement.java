@@ -60,11 +60,11 @@ public class RemoveElement {
         int slowPoint = 0;
         for (int fastPoint = 1; fastPoint < nums.length; fastPoint++) {
             if (nums[fastPoint] != nums[slowPoint]) {
-                nums[slowPoint++] = nums[fastPoint];
+                nums[++slowPoint] = nums[fastPoint];
             }
         }
 
-        return slowPoint;
+        return ++slowPoint;
     }
 
     public static void main(String[] args) {
