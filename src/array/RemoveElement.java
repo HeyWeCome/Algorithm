@@ -125,14 +125,41 @@ public class RemoveElement {
         return strBuilder.substring(0, slowPoint);
     }
 
-    public static void main(String[] args) {
-//        int[] nums = new int[]{4,2,4,0,0,3,0,5,1,0};
-//        int val = 5;
+    /**
+     * @Author heywecome
+     * @Description 977. 有序数组的平方
+     * 给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
+     * @Date 15:51 2021/10/20
+     * @Param [nums]
+     * @return int[]
+     **/
+    public int[] sortedSquares(int[] nums) {
+        int right = nums.length - 1;
+        int left = 0;
+        int[] result = new int[nums.length];
+        int index = result.length - 1;
+        while (left <= right) {
+            if (nums[left] * nums[left] > nums[right] * nums[right]) {
+                result[index--] = nums[left] * nums[left];
+                left++;
+            } else {
+                result[index--] = nums[right] * nums[right];
+                right--;
+            }
+        }
+        return result;
+    }
 
-        String s = "a##c";
-        String t = "#a#c";
+    public static void main(String[] args) {
+        int[] nums = new int[]{-4,-1,0,3,10};
+        int val = 5;
+
+//        String s = "a##c";
+//        String t = "#a#c";
         RemoveElement removeElement = new RemoveElement();
-        System.out.println(removeElement.backspaceCompare(s, t));
-        System.out.println(removeElement.handleStringToRemoveBackspace(t).toString());
+        int[] sortedSquares = removeElement.sortedSquares(nums);
+        System.out.println(Arrays.toString(sortedSquares));
+//        System.out.println(removeElement.backspaceCompare(s, t));
+//        System.out.println(removeElement.handleStringToRemoveBackspace(t).toString());
     }
 }
