@@ -89,21 +89,47 @@ var moveZeroes = function(nums) {
 const s = "ab##";
 const t = "ad#c";
 var backspaceCompare = function(s, t) {
-
+  return handleBackspaceCompare(s) === handleBackspaceCompare(t);
 };
 
 var handleBackspaceCompare = function(s) {
   let slow = 0;
   s = s.split('');
-  for(let fast = 1; fast < s.length; fast++) {
-    if(s[fast] == '#'){
-      s[slow] = s[++fast];
+  for(let fast = 0; fast < s.length; fast++) {
+    if(s[fast] != '#'){
+      s[slow++] = s[fast];
     } else{
-      slow++;
+      slow-1 >= 0 ? slow = slow-1 : slow = 0;
     }
   }
 
-  return s.join('').substring(0, slow+1);
+  return s.join('').substring(0, slow);
 };
 
-console.log(handleBackspaceCompare(s));
+/**
+ * 977 有序数组的平方
+ * 给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+const nums = [-4,-1,0,3,10];
+var sortedSquares = function(nums) {
+  let result = [];
+  let low = 0;
+  let high = nums.length-1;
+
+  while(low <= high){
+    const lowAbs = Math.abs(nums[low]);
+    const highAbs = Math.abs(nums[high]);
+
+    if(lowAbs > highAbs){
+      result.unshift(lowAbs*lowAbs);
+      low++;
+    } else {
+      result.unshift(highAbs*highAbs);
+      high--;
+    }  
+  }
+  return result;
+};
+console.log(sortedSquares(nums));
