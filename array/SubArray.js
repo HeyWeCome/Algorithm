@@ -58,6 +58,43 @@ var minSubArrayLen2 = function(target, nums) {
   return result > len ? 0 : result;
 };
 
-const nums = [2,3,1,2,4,3];
-const target = 7;
-console.log(minSubArrayLen(target, nums));
+
+/**
+ * leetcode 904 水果成篮问题
+ * @param {number[]} fruits
+ * @return {number}
+ */
+var totalFruit = function(fruits) {
+  const len = fruits.length;
+  let left = right = 0;
+  let result = 0;
+  
+  while(right < len) {
+    let sum = 0;
+    let cate1 = fruits[left];
+    let cate2 = fruits[right];
+
+    // 首先往后面走，看到哪里水果不一样
+    while((fruits[right] == cate1 || fruits[right] == cate2) && right < len){
+      sum = sum > right-left+1 ? sum: right-left+1;
+      right++;
+      
+      if(fruits[right] != cate1 && cate1 == cate2){
+        cate2 = fruits[right];
+      }
+    }
+
+    left = right-1;
+    cate1 = fruits[left];
+    while(left >= 1 && fruits[left-1] == cate1){
+      left--;
+    }
+
+    result = result > sum ? result : sum;
+  }
+
+  return result;
+};
+
+const fruits = [0,1,2,2];
+console.log(totalFruit(fruits));
