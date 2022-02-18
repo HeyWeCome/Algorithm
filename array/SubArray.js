@@ -96,5 +96,41 @@ var totalFruit = function(fruits) {
   return result;
 };
 
-const fruits = [0,1,2,2];
-console.log(totalFruit(fruits));
+
+/**
+ * leetcode 76 最小覆盖子串
+ * 输入：s = "ADOBECODEBANC", t = "ABC"
+ * 输出："BANC"
+ * @param {string} s
+ * @param {string} t
+ * @return {string}
+ */
+var minWindow = function(s, t) {
+  let left = 0;
+  let right = 0;
+  let result = []; // 记录下所有的长度
+  let postionRecord = []; // 记录所有的位置
+
+  if(s.length < t.length){
+    return "";
+  }
+
+  // 1. 记录下匹配字符出现的位置
+  let i = 0;
+  while(i < s.length){
+    if(t.includes(s.charAt(i))){
+      postionRecord.push(i);
+    }
+    i++;
+  }
+
+  left = postionRecord[0];
+  right = postionRecord[0];
+  
+
+  return postionRecord;
+};
+
+const s = "ADOBECODEBANC";
+const t = "ABC";
+console.log(minWindow(s, t));
