@@ -53,6 +53,7 @@ MyLinkedList.prototype.get = function(index) {
 MyLinkedList.prototype.addAtHead = function(val){
   const node = new LinkNode(val, this._head);
   this._head = node;
+  this._size++;
   if(!this._tail) {
     this._tail = node;
   }
@@ -83,10 +84,14 @@ MyLinkedList.prototype.addAtTail = function(val) {
  */
 MyLinkedList.prototype.addAtIndex = function(index, val) {
   // 尾插
-  if(index >= this._size){
-    this.addAtTail(val);
+  if(index > this._size){
     return;
   }
+
+  if(index === this._size) {
+    this.addAtTail(val);
+    return;
+}
 
   // 头插
   if(index <= 0){

@@ -31,9 +31,48 @@ var removeElements = function(head, val) {
   return header.next;
 };
 
-console.log(removeElements([1,2,6,3,4,5,6], 6));
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * leetcode 206
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var reverseList = function(head) {
+  // 双指针解法
+  if(!head || !head.next) return head;
+
+  let current = head;
+  let pre = null;
+  
+  while(current != null){
+    let temp = current.next;
+    current.next = pre;
+    pre = current;
+    current = temp;
+  }
+  return pre;
+};
+
+/**
+ * LeetCode 24: 两两交换链表中的节点
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+ var swapPairs = function(head) {
+   if(!head || !head.next) return head;
+
+   
+
+};
 
 function ListNode(val, next) {
   this.val = (val===undefined ? 0 : val)
   this.next = (next===undefined ? null : next)
 }
+
