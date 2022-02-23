@@ -65,10 +65,64 @@ var reverseList = function(head) {
  * @return {ListNode}
  */
  var swapPairs = function(head) {
-   if(!head || !head.next) return head;
+   let ret = new ListNode(0, head);
+   let current = ret;
 
-   
+   while(current.next && current.next.next) {
+    let temp = current.next.next;
+    let pre = current.next;
 
+    current.next = temp;
+    pre.next = temp.next;
+    temp.next = pre;
+    current = pre;
+   }
+
+   return ret.next;
+};
+
+/**
+ * leetcode 19：删除链表的倒数第 N 个节点
+ *
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+  let ret = new ListNode(0, head);
+  let slow = fast = ret;
+
+  // fast先走 n 步
+  while(n-- > 0){
+    fast = fast.next;
+  }
+
+  // 直到fast走到末尾
+  while(fast.next){
+    fast = fast.next;
+    slow = slow.next;
+  }
+
+  slow.next = slow.next.next;
+  return ret.next;
+};
+
+/**
+ * leetcode 面试题 02.07. 链表相交
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+ var getIntersectionNode = function(headA, headB) {
+  let curA = headA;
+  let curB = headB;
+
+  while(curA != curB){
+    curA = curA === null ? curB : curA.next;
+    curB = curB === null ? curA : curB.next;
+  }
+
+  return curA;
 };
 
 function ListNode(val, next) {
