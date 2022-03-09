@@ -64,7 +64,7 @@ var reverseList = function(head) {
  * @param {ListNode} head
  * @return {ListNode}
  */
- var swapPairs = function(head) {
+var swapPairs = function(head) {
    let ret = new ListNode(0, head);
    let current = ret;
 
