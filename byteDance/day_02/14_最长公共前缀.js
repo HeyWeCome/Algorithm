@@ -29,4 +29,4 @@ var longestCommonPrefix = function(strs) {
   return result;
 };
 
-longestCommonPrefix(strs);
+console.log(longestCommonPrefix1(strs));
