@@ -10,21 +10,32 @@
  * @param {TreeNode} root
  * @return {number}
  */
+// var maxDepth = function(root) {
+//   const queue = [];
+//   let count = 0;
+
+//   if (root === null) return 0;
+//   queue.push(root);
+
+//   while (queue.length > 0) {
+//     let len = queue.length;
+//     count++;
+//     for (let i = 0; i < len; i++) {
+//       const node = queue.shift();
+//       if (node.left) queue.push(node.left);
+//       if (node.right) queue.push(node.right);
+//     }
+//   }
+//   return count;
+// };
+
 var maxDepth = function(root) {
-  const queue = [];
-  let count = 0;
+  let count = 1;
 
-  if (root === null) return 0;
-  queue.push(root);
-
-  while (queue.length > 0) {
-    let len = queue.length;
-    count++;
-    for (let i = 0; i < len; i++) {
-      const node = queue.shift();
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
-    }
+  const dfs = (root, count) => {
+    if( root === null ) return 0;
+    return Math.max(dfs(root.left, count+1), dfs(root.right, count+1));
   }
-  return count;
+
+  return dfs(root, count);
 };

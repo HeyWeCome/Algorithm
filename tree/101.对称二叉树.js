@@ -10,30 +10,44 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+
+// 递归
+// var isSymmetric = function(root) {
+//   if (root === null) return true;
+
+//   const compare = (left, right) => {
+//     // 首先排除为空的情况
+//     if ((left === null && right !== null) || (left !== null && right === null)) return false;
+//     else if (left === null && right === null) return true;
+//     else if (left.val !== right.val) return false;
+
+//     // 然后分别走子树
+//     let outSide = compare(left.left, right.right);
+//     let inSide = compare(left.right, right.left);
+//     return outSide&&inSide;
+//   }
+
+//   return compare(root.left, root.right);
+// };
+
+// 非递归
 var isSymmetric = function(root) {
-  let queue = [];
+  if (root === null) return true;
 
-  queue.push(root);
-  while (queue.length > 0) {
-    let len = queue.length;
-    let curLevel = [];
+  const queue = [];
+  queue.push(root.left);
+  queue.push(root.right);
 
-    for (let i = 0; i < len; i++) {
-      const node = queue.shift();
-      if (node) curLevel.push(node.val);
-      else curLevel.push(null);
-      queue.push(node.left);
-      queue.push(node.right);
-    }
+  while (queue.length) {
+    let leftNode = queue.shift();
+    let rightNode = queue.shift();
 
-    console.log(curLevel);
-    // 如果这一层节点数是奇数，则不对称
-    if (curLevel.length % 2 !== 0 && curLevel.length !== 1) return false;
-
-    // 节点数为偶数时
-    while (curLevel.length > 1) {
-      if (curLevel.shift() !== curLevel.pop()) return false;
-    }
+    if (leftNode === null && rightNode === null) continue;
+    else if(leftNode === null || rightNode === null || leftNode.val !== rightNode.val) return false;
+    queue.push(leftNode.left);
+    queue.push(rightNode.right);
+    queue.push(leftNode.right);
+    queue.push(rightNode.left);
   }
 
   return true;
