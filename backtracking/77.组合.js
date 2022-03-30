@@ -1,6 +1,6 @@
 /**
- * @param {number} n
- * @param {number} k
+ * @param {number} n 给定的数值范围
+ * @param {number} k 数的个数
  * @return {number[][]}
  */
 
