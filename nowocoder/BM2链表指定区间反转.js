@@ -49,25 +49,53 @@ function ListNode(x){
 //   }
 // }
 
+// function reverseBetween(head, m, n) {
+//   const dummyNode = new ListNode(-1);
+//   dummyNode.next = head;
+
+//   // 走到待翻转链表的前一个位置
+//   let pre = dummyNode;
+//   for (let i = 1; i < m-1; i++) {
+//     pre = pre.next;
+//   }
+
+//   // 开始反转的地方
+//   let cur = pre.next;
+//   for (let i = 0; i < n-m+1; i++) {
+//     let next = cur.next;
+//     cur.next = next.next;
+//     next.next = pre;
+//     pre.next = next;
+//   }
+
+//   return dummyNode.next;
+// }
+
 function reverseBetween(head, m, n) {
   const dummyNode = new ListNode(-1);
   dummyNode.next = head;
 
   // 走到待翻转链表的前一个位置
   let pre = dummyNode;
-  for (let i = 1; i < m-1; i++) {
+  for (let i = 0; i < m-1; i++) {
     pre = pre.next;
   }
 
   // 开始反转的地方
   let cur = pre.next;
+  const record = [];
   for (let i = 0; i < n-m+1; i++) {
-    let next = cur.next;
-    cur.next = next.next;
-    next.next = pre;
-    pre.next = next;
+    record.push(cur);
+    cur = cur.next;
   }
 
+  while (record.length > 0) {
+    pre.next = record.pop();
+    pre = pre.next;
+    pre.next = null;
+  }
+
+  pre.next = cur;
   return dummyNode.next;
 }
 
